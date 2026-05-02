@@ -388,21 +388,18 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         degree: 'Master of Computer Application (MCA)',
         school: 'Shri Ram Murti Smarak CET, Bareilly',
         schoolUrl: 'https://srms.ac.in/cet/',
-        score: '81%',
         duration: '2023 - 2025'
       },
       {
         degree: 'Bachelor of Computer Application (BCA)',
         school: 'Bareilly College, Bareilly',
         schoolUrl: 'https://bcb.ac.in/',
-        score: '73%',
         duration: '2020 - 2023'
       },
       {
         degree: 'Schooling',
         school: 'Kendriya Vidyalaya NER, Izzatnagar, Bareilly',
         schoolUrl: 'https://nerizzatnagar.kvs.ac.in/',
-        score: 'XII - 76%',
         duration: '2007 - 2020'
       }
     ],
