@@ -1,0 +1,126 @@
+<main class="page-shell page-enter">
+  <div class="page-panel">
+    <app-navbar></app-navbar>
+    <app-hero [data]="portfolioData"></app-hero>
+
+    <section class="stats-grid section-fade">
+      <a class="stat-card stat-link" *ngFor="let item of portfolioData.highlights; let i = index" [style.animation-delay]="(i * 120) + 'ms'" [href]="item.url" [target]="item.url.startsWith('http') || item.url.endsWith('.pdf') ? '_blank' : null" [rel]="item.url.startsWith('http') || item.url.endsWith('.pdf') ? 'noreferrer' : null">
+        <h3>{{ item.value }}</h3>
+        <p>{{ item.label }}</p>
+      </a>
+    </section>
+
+    <section id="experience" class="experience-section story-panel section-fade">
+        <div class="section-heading">
+          <span>Current role</span>
+          <h2>Experience</h2>
+        </div>
+
+        <article class="experience-card" *ngFor="let item of portfolioData.experience">
+          <div class="experience-top">
+            <div>
+              <h3>{{ item.role }}</h3>
+              <p>
+                <a [href]="item.companyUrl" target="_blank" rel="noreferrer">{{ item.company }}</a>
+                <span>•</span>
+                <a [href]="item.locationUrl" target="_blank" rel="noreferrer">{{ item.location }}</a>
+              </p>
+            </div>
+
+            <span>{{ item.duration }}</span>
+          </div>
+
+          <ul>
+            <li *ngFor="let point of item.points">
+              <a [href]="point.url" target="_blank" rel="noreferrer">{{ point.text }}</a>
+            </li>
+          </ul>
+        </article>
+    </section>
+
+    <app-projects [data]="portfolioData"></app-projects>
+
+    <section class="achievement-panel story-panel section-fade">
+        <div class="section-heading">
+          <span>Recognition</span>
+          <h2>Achievements</h2>
+        </div>
+
+        <div class="achievement-gallery">
+          <a
+            class="achievement-card"
+            *ngFor="let item of portfolioData.achievements"
+            [class.achievement-card-featured]="portfolioData.achievements.length % 2 !== 0 && item.imagePath === 'assets/media/gold-medilist.jpeg'"
+            [href]="item.url"
+            [target]="item.url.startsWith('http') || item.url.endsWith('.pdf') || item.url.endsWith('.jpeg') ? '_blank' : null"
+            [rel]="item.url.startsWith('http') || item.url.endsWith('.pdf') || item.url.endsWith('.jpeg') ? 'noreferrer' : null"
+          >
+            <div class="achievement-media" *ngIf="item.imagePath; else achievementPlaceholder">
+              <img [src]="item.imagePath" [alt]="item.text" loading="lazy" />
+            </div>
+
+            <ng-template #achievementPlaceholder>
+              <div class="achievement-placeholder">
+                <span>Recognition</span>
+                <strong>Certificate will be added soon</strong>
+              </div>
+            </ng-template>
+
+            <div class="achievement-copy">
+              <span>{{ item.issuer }}</span>
+              <h3>{{ item.text }}</h3>
+              <p>{{ item.detail }}</p>
+            </div>
+          </a>
+        </div>
+    </section>
+
+    <section class="details-grid section-fade">
+
+      <section id="skills" class="skills-panel story-panel">
+        <div class="section-heading">
+          <span>What I use</span>
+          <h2>Skills</h2>
+        </div>
+
+        <div class="skill-groups">
+          <article class="skill-group stagger-item" *ngFor="let group of portfolioData.skillGroups; let i = index" [style.transitionDelay]="(i * 140) + 'ms'">
+            <h3>{{ group.name }}</h3>
+            <div class="pills">
+              <a class="pill-link" *ngFor="let item of group.items" [href]="item.url" target="_blank" rel="noreferrer">{{ item.label }}</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <app-about [data]="portfolioData"></app-about>
+
+    <section class="bottom-grid section-fade">
+      <section class="education-panel story-panel">
+        <div class="section-heading">
+          <span>Academic background</span>
+          <h2>Education</h2>
+        </div>
+
+        <article class="education-card" *ngFor="let item of portfolioData.education">
+          <div class="education-top">
+            <div>
+              <h3>{{ item.degree }}</h3>
+              <p><a [href]="item.schoolUrl" target="_blank" rel="noreferrer">{{ item.school }}</a></p>
+            </div>
+
+            <span>{{ item.duration }}</span>
+          </div>
+
+          <strong>{{ item.score }}</strong>
+        </article>
+      </section>
+
+      <app-contact [data]="portfolioData"></app-contact>
+
+    </section>
+
+    <app-footer [data]="portfolioData"></app-footer>
+  </div>
+</main>

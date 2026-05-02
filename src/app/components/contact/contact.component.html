@@ -1,0 +1,25 @@
+<section id="contact" class="contact-section section-fade">
+  <span>Get in touch</span>
+  <h2>Let’s build something reliable and well-crafted.</h2>
+  <p>I’m open to software engineering roles and collaborative product work. If you are hiring for frontend or full-stack roles, want help improving an Angular interface, or need someone who can translate product requirements into maintainable implementation, I’d be glad to connect.</p>
+
+  <div class="contact-list">
+    <a [href]="'mailto:' + data.email">
+      <strong>Email</strong>
+      <span>{{ data.email }}</span>
+    </a>
+    <a [href]="'tel:' + data.phone">
+      <strong>Phone</strong>
+      <span>{{ data.phone }}</span>
+    </a>
+    <a [href]="data.locationUrl" target="_blank" rel="noreferrer">
+      <strong>Location</strong>
+      <span>{{ data.location }}</span>
+    </a>
+  </div>
+
+  <div class="contact-actions">
+    <a [href]="'mailto:' + data.email">Email Me</a>
+    <a [href]="data.linkedInUrl" target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</section>

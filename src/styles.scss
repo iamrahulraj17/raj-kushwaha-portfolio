@@ -1,0 +1,146 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(242, 182, 50, 0.14), rgba(242, 182, 50, 0) 24%),
+    linear-gradient(180deg, #efefef 0%, #e7e7e7 100%);
+  color: #26211f;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
+}
+
+a,
+button,
+input,
+textarea {
+  transition: all 180ms ease;
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+.page-enter {
+  animation: page-appear 700ms ease both;
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(34px);
+}
+
+.section-fade.is-visible {
+  animation: section-fade-up 850ms ease both;
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.section-fade.is-visible .stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes page-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes section-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .section-fade,
+  .stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,109 @@
+<section id="projects" class="projects-section section-fade">
+  <div class="section-heading">
+    <span>Selected work</span>
+    <h2>Projects</h2>
+    <p>Product-focused builds with practical workflows, clear UI decisions, and full-stack thinking.</p>
+  </div>
+
+  <article class="project-card" *ngFor="let p of data.projects; let i = index" [class.reverse]="i % 2 === 1">
+    <a
+      class="media"
+      [href]="getPrimaryProjectLink(p) || 'javascript:void(0)'"
+      [target]="isExternalLink(getPrimaryProjectLink(p)) ? '_blank' : null"
+      [rel]="getPrimaryProjectLink(p)?.startsWith('http') ? 'noreferrer' : null"
+    >
+      <span class="project-index">0{{ i + 1 }}</span>
+      <div class="media-frame">
+        <div class="media-toolbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="media-screen">
+          <img [src]="getActiveImage(p, i)" [alt]="p.name" [class.media-image-transitioning]="isTransitioning[i]" />
+          <div class="media-controls" *ngIf="getProjectImages(p).length > 1">
+            <button
+              type="button"
+              class="media-control media-control-prev"
+              (click)="showPreviousImage(p, i, $event)"
+              [attr.aria-label]="'Show previous image for ' + p.name"
+            >
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+
+            <button
+              type="button"
+              class="media-control media-control-next"
+              (click)="showNextImage(p, i, $event)"
+              [attr.aria-label]="'Show next image for ' + p.name"
+            >
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <span class="media-shade"></span>
+    </a>
+
+    <div class="copy">
+      <div class="copy-top">
+        <span class="project-type">{{ p.type }}</span>
+        <div class="stack">
+          <a *ngFor="let item of p.stack" [href]="item.url" target="_blank" rel="noreferrer">{{ item.label }}</a>
+        </div>
+      </div>
+
+      <h3>
+        <a
+          [href]="getPrimaryProjectLink(p) || 'javascript:void(0)'"
+          [target]="isExternalLink(getPrimaryProjectLink(p)) ? '_blank' : null"
+          [rel]="getPrimaryProjectLink(p)?.startsWith('http') ? 'noreferrer' : null"
+        >
+          {{ p.name }}
+        </a>
+      </h3>
+      <p class="project-summary">{{ p.desc }}</p>
+      <p class="project-detail">{{ p.detail }}</p>
+
+      <ul>
+        <li *ngFor="let item of p.highlights">
+          <a [href]="item.url" target="_blank" rel="noreferrer">{{ item.text }}</a>
+        </li>
+      </ul>
+
+      <div class="project-actions">
+        <a
+          *ngIf="p.frontendRepoUrl"
+          class="project-link"
+          [href]="p.frontendRepoUrl"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Frontend Repo
+        </a>
+
+        <a
+          *ngIf="p.backendRepoUrl"
+          class="project-link project-link-secondary"
+          [href]="p.backendRepoUrl"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Backend Repo
+        </a>
+
+        <a
+          *ngIf="p.liveUrl"
+          class="project-link"
+          [href]="p.liveUrl"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Visit Website
+        </a>
+      </div>
+    </div>
+  </article>
+</section>

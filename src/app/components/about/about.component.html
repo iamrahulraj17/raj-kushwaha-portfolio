@@ -1,0 +1,22 @@
+<section id="about" class="about-section story-panel section-fade">
+  <div class="copy">
+    <span>About me</span>
+    <h2 class="stagger-item" style="transition-delay: 80ms;">Building useful products with clean frontend architecture.</h2>
+    <p class="stagger-item" style="transition-delay: 160ms;">{{ data.aboutSummary }}</p>
+    <div class="about-details">
+      <p class="stagger-item" *ngFor="let item of data.aboutDetails; let i = index" [style.transitionDelay]="(260 + (i * 120)) + 'ms'">{{ item }}</p>
+    </div>
+    <a class="resume-link stagger-item" style="transition-delay: 620ms;" [href]="data.resumeUrl" target="_blank" rel="noreferrer">View Resume</a>
+  </div>
+
+  <figure class="convocation-card stagger-item" style="transition-delay: 300ms;">
+    <div class="convocation-image-wrap">
+      <img [src]="data.convocationImage" [alt]="data.convocationTitle" loading="lazy" />
+    </div>
+    <figcaption>
+      <span>{{ data.convocationBadge }}</span>
+      <h3>{{ data.convocationTitle }}</h3>
+      <p>{{ data.convocationSummary }}</p>
+    </figcaption>
+  </figure>
+</section>

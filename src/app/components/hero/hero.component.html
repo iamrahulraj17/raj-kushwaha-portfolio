@@ -1,0 +1,40 @@
+<section id="home" class="hero section-fade">
+  <div class="left hero-copy">
+    <div class="eyebrow eyebrow-links">
+      <a *ngFor="let item of data.roleTags" [href]="item.url" target="_blank" rel="noreferrer">{{ item.label }}</a>
+    </div>
+    <h1>Hello, my name is {{ data.name }}</h1>
+    <h2>{{ data.title }} based in <a [href]="data.locationUrl" target="_blank" rel="noreferrer">{{ data.location }}</a></h2>
+    <p class="summary">{{ data.heroSummary }}</p>
+
+    <div class="mini-meta">
+      <span>{{ data.email }}</span>
+      <span>{{ data.phone }}</span>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#projects">Projects</a>
+      <a class="btn btn-secondary" [href]="'https://www.linkedin.com/in/iamrajkushwaha?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="right hero-visual">
+    <div
+      class="portrait-shell"
+      [class.is-badge-visible]="isBadgeVisible"
+      (click)="toggleBadge()"
+      (keydown.enter)="toggleBadge()"
+      (keydown.space)="$event.preventDefault(); toggleBadge()"
+      tabindex="0"
+      role="button"
+      [attr.aria-pressed]="isBadgeVisible"
+      aria-label="Show gold medal achievement"
+    >
+      <div class="portrait-circle"></div>
+      <div class="portrait-card">
+        <img [src]="data.profileImage" [alt]="data.name" />
+      </div>
+      <div class="portrait-badge">Gold Medalist MCA 2025</div>
+    </div>
+  </div>
+</section>

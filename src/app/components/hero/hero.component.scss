@@ -1,0 +1,240 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  align-items: center;
+  gap: clamp(28px, 4vw, 60px);
+  min-height: calc(100vh - 92px);
+  padding: 28px 0 72px;
+}
+
+.left {
+  max-width: 620px;
+}
+
+.hero-copy {
+  animation: slide-up 800ms ease both;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #f2b632;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.eyebrow-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.eyebrow-links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(242, 182, 50, 0.12);
+  color: #bb8004;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.eyebrow-links a:hover {
+  background: #f2b632;
+  color: #201b19;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 22px rgba(242, 182, 50, 0.28);
+}
+
+h1 {
+  margin: 0;
+  color: #26211f;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  line-height: 0.95;
+}
+
+h2 {
+  margin: 16px 0 0;
+  color: #534a45;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h2 a {
+  color: inherit;
+  text-decoration-color: rgba(83, 74, 69, 0.35);
+}
+
+.summary {
+  max-width: 520px;
+  margin: 20px 0 0;
+  color: #67615d;
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.mini-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.mini-meta span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #f8f1df;
+  color: #6a5843;
+  font-size: 0.88rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 116px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid #1f1a17;
+  color: #1f1a17;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #f2b632;
+  border-color: #f2b632;
+}
+
+.btn-secondary {
+  background: #fffdf8;
+}
+
+.right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual {
+  animation: float-in 900ms ease both 140ms;
+}
+
+.portrait-shell {
+  position: relative;
+  width: min(100%, 390px);
+  height: 390px;
+  cursor: pointer;
+  outline: none;
+}
+
+.portrait-shell:focus-visible .portrait-card {
+  box-shadow:
+    0 0 0 4px rgba(242, 182, 50, 0.35),
+    0 22px 50px rgba(44, 33, 23, 0.16);
+}
+
+.portrait-circle {
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: min(100%, 390px);
+  height: 390px;
+  background: #f2b632;
+  border-radius: 44% 56% 55% 45% / 48% 38% 62% 52%;
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.portrait-card {
+  position: absolute;
+  right: 38px;
+  bottom: 22px;
+  width: 256px;
+  height: 320px;
+  background: linear-gradient(180deg, #fdfcf8 0%, #ece8df 100%);
+  border-radius: 120px 120px 90px 90px;
+  box-shadow: 0 22px 50px rgba(44, 33, 23, 0.16);
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.portrait-shell:hover .portrait-card,
+.portrait-shell:focus-visible .portrait-card,
+.portrait-shell.is-badge-visible .portrait-card {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(44, 33, 23, 0.22);
+}
+
+.portrait-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.98) contrast(1.02);
+}
+
+.portrait-badge {
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: #fffdf8;
+  box-shadow: 0 16px 34px rgba(44, 33, 23, 0.12);
+  color: #3e342f;
+  font-size: 0.86rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  transform-origin: left bottom;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.portrait-shell:hover .portrait-badge,
+.portrait-shell:focus-visible .portrait-badge,
+.portrait-shell.is-badge-visible .portrait-badge {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 12px 0 56px;
+  }
+
+  .right {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .portrait-shell,
+  .portrait-circle {
+    width: 270px;
+    height: 270px;
+  }
+
+  .portrait-card {
+    right: 24px;
+    width: 184px;
+    height: 230px;
+  }
+
+  .portrait-badge {
+    left: 8px;
+    right: 8px;
+    bottom: -8px;
+    text-align: center;
+  }
+}
