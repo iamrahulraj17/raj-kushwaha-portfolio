@@ -415,7 +415,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         text: 'IBM Skill Build AI Certification.',
         detail: 'Completed AI certification under IBM Skill Build Program.',
         issuer: 'IBM',
-        imagePath: 'assets/media/Completion Certificate _ SkillsBuild.pdf',
+        imagePath: 'assets/media/Completion Certificate _ SkillsBuild_page-0001.jpg',
         url: 'assets/media/Completion Certificate _ SkillsBuild.pdf'
       },
       {
