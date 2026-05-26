@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     convocationSummary: 'I wanted this moment to sit inside the portfolio as part of the story, not just as a gallery image. It marks the academic journey behind the projects, discipline, and recognition highlighted across the site.',
     linkedInUrl: 'https://www.linkedin.com/in/iamrajkushwaha?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     githubUrl: 'https://github.com/',
-    resumeUrl: 'assets/media/Raj-Kushwaha-Resume-May26.pdf',
+    resumeUrl: 'assets/media/Raj-Kushwaha-SDE-1.pdf',
     highlights: [
       {
         value: '1.5+',
