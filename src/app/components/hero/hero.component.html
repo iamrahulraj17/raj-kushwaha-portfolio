@@ -32,7 +32,9 @@
     >
       <div class="portrait-circle"></div>
       <div class="portrait-card">
-        <img [src]="data.profileImage" [alt]="data.name" loading="lazy"/>
+        <img [src]="data.profileImage" [alt]="'Raj Kushwaha, Software Engineer'"
+          fetchpriority="high"
+          decoding="async"/>
       </div>
       <div class="portrait-badge">Gold Medalist MCA 2025</div>
     </div>

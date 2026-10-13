@@ -11,7 +11,9 @@
 
   <figure class="convocation-card stagger-item" style="transition-delay: 300ms;">
     <div class="convocation-image-wrap">
-      <img [src]="data.convocationImage" [alt]="data.convocationTitle" loading="lazy" />
+      <img [src]="data.convocationImage" [alt]="'Raj Kushwaha, Software Engineer'"
+          fetchpriority="high"
+          decoding="async" />
     </div>
     <figcaption>
       <span>{{ data.convocationBadge }}</span>
