@@ -74,6 +74,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     locationUrl: 'https://www.google.com/maps/search/?api=1&query=Bareilly%2C%20India',
     phone: '+91-7983518424',
     email: 'rk2393810@gmail.com',
+    instagramUrl: 'https://www.instagram.com/iam__rahulraj/',
     profileImage: 'assets/media/raj-profile.webp',
     heroSummary: 'I build fast, maintainable web applications with Angular, Node.js, and thoughtful frontend architecture.',
     aboutSummary: 'I am a Gold Medalist in MCA from Shri Ram Murti Smarak College of Engineering & Technology (SRMS), Bareilly, an achievement that reflects my dedication, discipline, and commitment to continuous learning. As a Software Engineer, I focus on building fast, maintainable, and user-friendly web applications using Angular, Node.js, and MySQL.',
