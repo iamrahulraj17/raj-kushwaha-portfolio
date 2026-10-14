@@ -76,18 +76,18 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     email: 'rk2393810@gmail.com',
     profileImage: 'assets/media/raj-profile.webp',
     heroSummary: 'I build fast, maintainable web applications with Angular, Node.js, and thoughtful frontend architecture.',
-    aboutSummary: 'I focus on building fast, maintainable, and user-friendly web applications. My recent work spans Angular frontend engineering, reusable component systems, API integration, and performance improvements for production products.',
+    aboutSummary: 'I am a Gold Medalist in MCA from Shri Ram Murti Smarak College of Engineering & Technology (SRMS), Bareilly, an achievement that reflects my dedication, discipline, and commitment to continuous learning. As a Software Engineer, I focus on building fast, maintainable, and user-friendly web applications using Angular, Node.js, and MySQL.',
     aboutDetails: [
-      'At eSecForte, I work on production-grade product engineering for NxSAM V2, where I contribute to feature development, reusable UI building blocks, and smoother frontend performance.',
-      'I enjoy turning complex workflows into interfaces that feel clear and dependable. That usually means structuring components well, keeping APIs predictable, and paying attention to responsiveness and usability.',
-      'Alongside professional work, I have built academic and personal full-stack projects that strengthened my understanding of dashboards, inventory systems, relational data design, and workflow automation.'
+      'My academic journey culminated in earning the MCA Gold Medal for the 2025 batch, a milestone that represents years of focused study, consistent effort, and a strong foundation in software development. This achievement continues to motivate me to pursue excellence in my professional journey.',
+      'At eSecForte, I work on production-grade product engineering for NxSAM V2, contributing to feature development, reusable UI components, REST API integration, and frontend performance optimization.',
+      'I enjoy turning complex workflows into clear, dependable interfaces. Through professional experience and academic and personal projects, I have strengthened my skills in dashboard development, relational database design, full-stack applications, and workflow automation.'
     ],
     convocationImage: 'assets/media/convocation.jpeg',
     convocationBadge: 'Convocation 2025',
     convocationTitle: 'A milestone that reflects years of focused academic work.',
-    convocationSummary: 'I wanted this moment to sit inside the portfolio as part of the story, not just as a gallery image. It marks the academic journey behind the projects, discipline, and recognition highlighted across the site.',
+    convocationSummary: 'I see this moment as an important part of my journey, not just a photograph in my portfolio. It represents the dedication, discipline, and academic excellence that led to my MCA Gold Medal and continue to inspire me in my professional journey.',
     linkedInUrl: 'https://www.linkedin.com/in/iamrajkushwaha?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    githubUrl: 'https://github.com/',
+    githubUrl: 'https://github.com/iamrahulraj17',
     resumeUrl: 'assets/media/Raj-Kushwaha-SDE-1.pdf',
     highlights: [
       {
